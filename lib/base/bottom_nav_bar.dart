@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/shared/styles/app_styles.dart';
 import 'package:ticket_app/screen/home.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -28,6 +29,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppStyles.primaryColor,
       body: Center(child: navList[_selectedIndex]),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
