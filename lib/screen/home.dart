@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/data/all_json_data.dart';
 import 'package:ticket_app/base/shared/media.dart';
 import 'package:ticket_app/base/shared/styles/app_styles.dart';
 import 'package:ticket_app/base/shared/widget/section_title.dart';
@@ -80,7 +81,25 @@ class HomePage extends StatelessWidget {
                   title: 'Upcoming Flights',
                   buttonText: 'View all',
                 ),
-                TicketView(),
+                SizedBox(
+                  height: 25,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: ticketList
+                        .take(3)
+                        .map((singleTicket) => TicketView(ticket: singleTicket))
+                        .toList(),
+                  ),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                SectionTitle(
+                  title: 'Upcoming Flights',
+                  buttonText: 'View all',
+                ),
               ],
             ),
           ),
