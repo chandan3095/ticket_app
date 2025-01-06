@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/shared/styles/app_styles.dart';
 import 'package:ticket_app/screen/home.dart';
+import 'package:ticket_app/screen/search/search.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -13,7 +14,7 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   final navList = [
     const HomePage(),
-    const Text('Search'),
+    const SearchPage(),
     const Text('Tickets'),
     const Text('Profile'),
   ];
