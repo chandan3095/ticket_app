@@ -8,6 +8,7 @@ class AppStyles {
   static Color bgColor = Color(0xFFeeedf2);
   static Color ticketBlue = Color(0xFF526799);
   static Color ticketOrange = Color(0xFFF37B67);
+  static Color kakiColor = Color(0xFFd2bdb6);
 
   static TextStyle textStyle =
       TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: textColor);

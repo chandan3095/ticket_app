@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/data/all_json_data.dart';
 import 'package:ticket_app/base/shared/media.dart';
 import 'package:ticket_app/base/shared/styles/app_styles.dart';
+import 'package:ticket_app/base/shared/widget/hotel_view.dart';
 import 'package:ticket_app/base/shared/widget/section_title.dart';
 import 'package:ticket_app/base/shared/widget/ticket_view.dart';
 
@@ -18,6 +19,7 @@ class HomePage extends StatelessWidget {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: 10,
@@ -80,6 +82,7 @@ class HomePage extends StatelessWidget {
                 SectionTitle(
                   title: 'Upcoming Flights',
                   buttonText: 'View all',
+                  func: () => Navigator.pushNamed(context, "/all_tickets"),
                 ),
                 SizedBox(
                   height: 25,
@@ -97,8 +100,21 @@ class HomePage extends StatelessWidget {
                   height: 25,
                 ),
                 SectionTitle(
-                  title: 'Upcoming Flights',
+                  title: 'Hotels',
                   buttonText: 'View all',
+                  func: () => {print('Hotels')},
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: hotelList
+                        .take(3)
+                        .map((singleHotel) => HotelView(hotel: singleHotel))
+                        .toList(),
+                  ),
                 ),
               ],
             ),
