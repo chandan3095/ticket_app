@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/shared/styles/app_styles.dart';
 
 class BigDot extends StatelessWidget {
-  const BigDot({super.key});
+  final bool? isColor;
+  const BigDot({super.key, this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,8 @@ class BigDot extends StatelessWidget {
           borderRadius: BorderRadius.circular(24),
           border: Border.all(
             width: 2.5,
-            color: AppStyles.whiteColor,
+            color:
+                isColor == null ? AppStyles.whiteColor : AppStyles.dotBlueColor,
           )),
     );
   }

@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/shared/styles/app_styles.dart';
 
 class NavTabWidget extends StatelessWidget {
-  const NavTabWidget({super.key});
+  final String firstTab;
+  final String secondTab;
+  const NavTabWidget(
+      {super.key, required this.firstTab, required this.secondTab});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +17,11 @@ class NavTabWidget extends StatelessWidget {
       child: Row(
         children: [
           AppTab(
-            tabText: 'Airline Tickets',
+            tabText: firstTab,
           ),
           AppTab(
+            tabText: secondTab,
             isActive: true,
-            tabText: 'Hotels',
             tabBorder: true,
           ),
         ],
@@ -51,7 +54,7 @@ class AppTab extends StatelessWidget {
       child: Center(
           child: Text(
         tabText,
-        style: AppStyles.headLine3.copyWith(fontWeight: FontWeight.w400),
+        style: AppStyles.headLine3.copyWith(fontWeight: FontWeight.w500),
       )),
     );
   }

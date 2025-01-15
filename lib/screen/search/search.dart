@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/shared/media.dart';
 import 'package:ticket_app/base/shared/styles/app_styles.dart';
+import 'package:ticket_app/base/shared/widget/section_title.dart';
 import 'package:ticket_app/screen/search/widget/app_text_input.dart';
 import 'package:ticket_app/screen/search/widget/find_ticket.dart';
 import 'package:ticket_app/screen/search/widget/nav_tab_widget.dart';
@@ -26,7 +27,10 @@ class SearchPage extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          NavTabWidget(),
+          NavTabWidget(
+            firstTab: 'Airline Tickets',
+            secondTab: 'Hotels',
+          ),
           SizedBox(
             height: 25,
           ),
@@ -43,6 +47,14 @@ class SearchPage extends StatelessWidget {
           ),
           FindTicket(
             buttonText: 'Find Ticket',
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          SectionTitle(
+            title: 'Upcoming Flights',
+            buttonText: 'View All',
+            func: () => Navigator.pushNamed(context, '/all_tickets'),
           ),
           SizedBox(
             height: 20,

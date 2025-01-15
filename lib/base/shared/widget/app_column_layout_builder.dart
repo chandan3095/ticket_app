@@ -6,11 +6,13 @@ class AppColumnLayoutBuilder extends StatelessWidget {
   final String text600;
   final String text500;
   final CrossAxisAlignment textAlign;
+  final bool? isColor;
   const AppColumnLayoutBuilder(
       {super.key,
       required this.text500,
       required this.text600,
-      this.textAlign = CrossAxisAlignment.start});
+      this.textAlign = CrossAxisAlignment.start,
+      this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +21,14 @@ class AppColumnLayoutBuilder extends StatelessWidget {
       children: [
         TextStyleMd(
           text: text600,
+          isColor: isColor,
         ),
         SizedBox(
           height: 5,
         ),
         TextStyleSm(
           text: text500,
+          isColor: isColor,
         ),
       ],
     );

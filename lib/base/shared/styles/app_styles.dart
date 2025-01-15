@@ -10,6 +10,9 @@ class AppStyles {
   static Color ticketOrange = Color(0xFFF37B67);
   static Color kakiColor = Color(0xFFd2bdb6);
   static Color planeColor = Color(0xFFbfc2df);
+  static Color planeSecondColor = Color(0xFFBACCF7);
+  static Color ticketColor = Color(0xFFFFFFFF);
+  static Color dotBlueColor = Color.fromARGB(255, 120, 194, 243);
 
   static TextStyle textStyle =
       TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: textColor);

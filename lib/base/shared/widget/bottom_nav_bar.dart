@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/shared/styles/app_styles.dart';
 import 'package:ticket_app/screen/home.dart';
 import 'package:ticket_app/screen/search/search.dart';
+import 'package:ticket_app/screen/ticketDetails/ticket_details.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -15,7 +16,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   final navList = [
     const HomePage(),
     const SearchPage(),
-    const Text('Tickets'),
+    const TicketDetailsPage(),
     const Text('Profile'),
   ];
 
