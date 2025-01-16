@@ -20,7 +20,7 @@ class TicketView extends StatelessWidget {
 
     return SizedBox(
       width: size.width * 0.85,
-      height: 220,
+      height: 207,
       child: Container(
         margin: EdgeInsets.only(right: isNotRight == true ? 0 : 16),
         child: Column(
@@ -121,14 +121,17 @@ class TicketView extends StatelessWidget {
                 children: [
                   BigCircle(
                     isRight: false,
+                    isColor: isColor,
                   ),
                   Expanded(
                       child: AppLayoutBuilderWidget(
                     randomNumber: 16,
                     width: 6,
+                    isColor: isColor,
                   )),
                   BigCircle(
                     isRight: true,
+                    isColor: isColor,
                   ),
                 ],
               ),
@@ -140,9 +143,13 @@ class TicketView extends StatelessWidget {
                   color: isColor == null
                       ? AppStyles.ticketOrange
                       : AppStyles.ticketColor,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(21),
-                      bottomRight: Radius.circular(21))),
+                  borderRadius: isColor == null
+                      ? BorderRadius.only(
+                          bottomLeft: Radius.circular(21),
+                          bottomRight: Radius.circular(21))
+                      : BorderRadius.only(
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(0))),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
