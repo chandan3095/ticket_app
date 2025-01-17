@@ -102,7 +102,7 @@ class HomePage extends StatelessWidget {
                 SectionTitle(
                   title: 'Hotels',
                   buttonText: 'View all',
-                  func: () => {print('Hotels')},
+                  func: () => {Navigator.pushNamed(context, '/all_hotels')},
                 ),
                 SizedBox(
                   height: 20,

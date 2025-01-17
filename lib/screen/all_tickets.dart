@@ -13,17 +13,25 @@ class AllTickets extends StatelessWidget {
       appBar: AppBar(
         title: Text('All Tickets'),
         centerTitle: true,
+        backgroundColor: AppStyles.bgColor,
       ),
       body: ListView(
         children: [
           SingleChildScrollView(
             child: Column(
               children: ticketList
-                  .map((singleTicket) => Container(
-                        margin: EdgeInsets.only(bottom: 20),
-                        child: TicketView(
-                          ticket: singleTicket,
-                          isNotRight: true,
+                  .map((singleTicket) => GestureDetector(
+                        onTap: () {
+                          var index = ticketList.indexOf(singleTicket);
+                          Navigator.pushNamed(context, '/ticket_screen',
+                              arguments: {'index': index});
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(bottom: 20),
+                          child: TicketView(
+                            ticket: singleTicket,
+                            isNotRight: true,
+                          ),
                         ),
                       ))
                   .toList(),

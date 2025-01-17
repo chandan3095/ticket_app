@@ -27,7 +27,7 @@ List<Map<String, dynamic>> ticketList = [
     'from': {'code': "NEP", 'name': "Nepal"},
     'to': {'code': "HYD", 'name': "Hyderabad"},
     'flying_time': '2H 00M',
-    'date': "21 AUGUST",
+    'date': "21 AUG",
     'departure_time': "02:00 AM",
     "number": 03
   },
@@ -35,7 +35,7 @@ List<Map<String, dynamic>> ticketList = [
     'from': {'code': "CHE", 'name': "Chennei"},
     'to': {'code': "KOL", 'name': "Kolkata"},
     'flying_time': '1H 47M',
-    'date': "25 SEPTEMBER",
+    'date': "25 SEP",
     'departure_time': "04:00 AM",
     "number": 07
   },
