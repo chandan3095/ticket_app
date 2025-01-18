@@ -8,14 +8,14 @@ import 'package:ticket_app/base/shared/widget/app_layout_builder_widget.dart';
 import 'package:ticket_app/base/shared/widget/ticket_view.dart';
 import 'package:ticket_app/screen/search/widget/nav_tab_widget.dart';
 
-class TicketDetailsPage extends StatefulWidget {
-  const TicketDetailsPage({super.key});
+class TicketScreen extends StatefulWidget {
+  const TicketScreen({super.key});
 
   @override
-  State<TicketDetailsPage> createState() => _TicketDetailsPageState();
+  State<TicketScreen> createState() => _TicketScreenState();
 }
 
-class _TicketDetailsPageState extends State<TicketDetailsPage> {
+class _TicketScreenState extends State<TicketScreen> {
   late int ticketIndex = 0;
 
   @override
@@ -43,16 +43,6 @@ class _TicketDetailsPageState extends State<TicketDetailsPage> {
           ListView(
             padding: EdgeInsets.symmetric(horizontal: 20),
             children: [
-              // SizedBox(
-              //   height: 55,
-              // ),
-              // Text(
-              //   'Tickets',
-              //   style: AppStyles.headLine1.copyWith(fontSize: 35),
-              // ),
-              // SizedBox(
-              //   height: 20,
-              // ),
               NavTabWidget(
                 firstTab: 'Upcoming',
                 secondTab: 'Previous',
