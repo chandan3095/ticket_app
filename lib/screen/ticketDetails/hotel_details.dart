@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/data/all_json_data.dart';
 import 'package:ticket_app/base/shared/styles/app_styles.dart';
@@ -10,6 +11,10 @@ class HotelDetails extends StatefulWidget {
 }
 
 class _HotelDetailsState extends State<HotelDetails> {
+  final String fulltext =
+      'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English.that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English.that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English.that a reader will be distracted by the readable content of a page when looking at its layout. ';
+  bool isExpanded = false;
+  final int previewLength = 100;
   late int index = 0;
   @override
   void didChangeDependencies() {
@@ -73,8 +78,28 @@ class _HotelDetailsState extends State<HotelDetails> {
               delegate: SliverChildListDelegate([
             Padding(
               padding: EdgeInsets.all(16),
-              child: Text(
-                  'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using, making it look like readable English.'),
+              child: Text.rich(
+                TextSpan(
+                  text: isExpanded
+                      ? fulltext
+                      : '${fulltext.substring(0, previewLength)}',
+                  style: TextStyle(fontSize: 16, color: AppStyles.textColor),
+                  children: [
+                    TextSpan(
+                      text: isExpanded ? ' Show Less' : ' Show More',
+                      style: TextStyle(
+                          color: AppStyles.ticketBlue,
+                          fontWeight: FontWeight.bold),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          setState(() {
+                            isExpanded = !isExpanded;
+                          });
+                        },
+                    )
+                  ],
+                ),
+              ),
             ),
             Padding(
               padding: EdgeInsets.all(16),

@@ -17,7 +17,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     const HomePage(),
     const SearchPage(),
     const TicketScreen(),
-    const Text('Profile'),
+    // const Text('Profile'),
   ];
 
   int _selectedIndex = 0;
@@ -39,6 +39,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         selectedItemColor: Colors.blueGrey,
         unselectedItemColor: Color(0xff526400),
         showSelectedLabels: false,
+        showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(
             icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
@@ -55,11 +56,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
             label: 'Tickets',
             activeIcon: Icon(FluentSystemIcons.ic_fluent_ticket_filled),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(FluentSystemIcons.ic_fluent_person_regular),
-            label: 'Profile',
-            activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(FluentSystemIcons.ic_fluent_person_regular),
+          //   label: 'Profile',
+          //   activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
+          // ),
         ],
       ),
     );
